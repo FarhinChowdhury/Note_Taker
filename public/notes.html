@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Taker</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- include this if you need jQuery -->
+	<!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark p-2">
+    <a class="navbar-brand" href="/">Note Taker</a>
+
+    <div class="icons">
+      <!-- save-note button is HIDDEN initially -->
+      <button onClick="handleCreateNewNote(event)" id='newNoteBtn' class="btn btn-secondary btn-sm"><i class="fas fa-pen"></i></button>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 list-container">
+        <div class="card">
+          <ul id='noteList' class="list-group">
+          </ul>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="card bg-light mt-2">
+          <div class='card-header'>New Note</div>
+          <div class="card-body">
+            <input onKeyUp="handleShowSaveBtn()" id='noteTitle' class="note-title" placeholder="Note Title" maxlength="28" type="text">
+            <textarea onKeyUp="handleShowSaveBtn()"  id='noteText' class="note-textarea" placeholder="Note Text"></textarea>
+              
+          </div>
+          <div id='saveNoteBtn' class="card-footer d-none">
+            <button onClick="handleNoteSave(event)" class="btn btn-primary btn-lg"><i class="fas fa-pen-alt"></i> Save</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="/assets/script.js"></script>
+</body>
+
+</html>
