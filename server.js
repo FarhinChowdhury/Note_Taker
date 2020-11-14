@@ -2,7 +2,7 @@
 //DEPENDENCIES
 const express = require("express");
 const app = express();
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 const notesInfo = './app/db.json'
 const fs = require("fs")
 app.use(express.urlencoded({ extended: true }));
